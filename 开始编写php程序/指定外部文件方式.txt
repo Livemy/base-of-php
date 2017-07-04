@@ -1,0 +1,7 @@
+include（"/path/filename")
+require("/paht/filename")
+include_once("/path/filename")
+require_once("/path/filename")
+
+1.有错误时，include和include_once仅会造成警告（warning),而require和require_once会造成程序终止执行(fatal error);
+2.include_once和require_once仅会载入外部的php文件一次，不会重复载入。如果在php程序中重复定义函数，将会导致严重的错误(fatal error);
