@@ -18,4 +18,7 @@
 
     filetime(string filename):获取文件或文件夹的最后访问时间，返回值为UNIX的时间戳（timestamp),我们可以用gmdate()函数将之转化为较易懂的格式。
     filectime(string filename):获取文件夹的创建时间，返回值为UNIX的时间戳（timestamp),我们可以用gmdate()函数将之转化为较易懂的格式。
-    filemtime(string filename):获取文件夹
+    filemtime(string filename):获取文件夹的修改时间，返回值为UNIX的时间戳（timestamp),我们可以用gmdate()函数将之转化为较易懂的格式。
+    filesize(string filename):获取文件的大小，单位为字节（bite）。
+    is_readable(string filename):若文件存在且可读，就返回TRUE;
+    is_writeable(string filename):所文件或文件夹存在且可以写入，就返回TRUE;

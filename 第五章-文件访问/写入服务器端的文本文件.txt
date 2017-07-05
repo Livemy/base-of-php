@@ -1,0 +1,15 @@
+             使用fwrite（），fputs（）函数写入文本文件
+1.  这两个函数其实是同一个，只是叫法不一样。
+    步骤：打开文件，写入文件，关闭文件
+    
+2.  写入文件是从文件指针处开始写入，所以打开文件的模式就十分重要。
+
+3.  fwrite(resource handle,string str[,int length])
+    fputs(resource handle,string str[,int length])
+    该函数会将参数str指定的内容写入参数handle指定的资源变量，而且是从文件指针处开始写入参数length所指定的字节数，若参数str指定的内容比参数length指定的字节数少，就会在参数str指定的内容后停止，若省略参数length，就写入str 的全部内容。
+
+
+
+
+            使用file_put_contents()函数写入文本文件
+1.  file_put_contents(string filename,string data):该函数无需经过打开文件及关闭文件的动作即可将指定的内容写入文件。
