@@ -1,0 +1,21 @@
+1.  判断文件是否存在：file_exists(string filename)  是的话返回TRUE
+
+
+2.  判断指定的路径是否为文件:is_file(string filename)   是的话返回TRUE
+
+
+3.  复制文件：copy(string source,string dest)
+    它会将参数source指定的文件复制到参数dest指定的位置及文件名，当目标文件已经存在时，旧文件将会被覆盖，若复制成功返回TRUE.
+
+4.  删除文件：unlink(string filename）
+    filename为要删除的文件，若成功删除则返回TRUE;
+
+5.  变更文件名：rename(string oldname,string newname)   若成功则返回TRUE
+    例如：将文件temp.php改名为temp.bak   rename("temp.php","temp.bak");
+
+
+6.  获取文件属性：
+
+    filetime(string filename):获取文件或文件夹的最后访问时间，返回值为UNIX的时间戳（timestamp),我们可以用gmdate()函数将之转化为较易懂的格式。
+    filectime(string filename):获取文件夹的创建时间，返回值为UNIX的时间戳（timestamp),我们可以用gmdate()函数将之转化为较易懂的格式。
+    filemtime(string filename):获取文件夹

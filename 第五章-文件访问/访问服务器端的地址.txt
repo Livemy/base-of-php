@@ -1,0 +1,17 @@
+1. 获取文件名：basename(string path[,string stuffix])
+   path为要获取文件名的路径，参数stuffix用来设置返回结果所要排除的字符串，返回值为字符串。
+   若没有包含文件名，就返回文件夹名称。
+
+2. 获取路径信息：pathinfo()
+   pathinfo()函数用来将指定路径分割为路径名称，文件名及拓展名三个部分。
+   通过dirname,basename,extention三个键获取路径名称，文件名（包括拓展名），及拓展名（不包含小数点）。
+   
+   $path=$__SERVER['PHP__SELF'];
+   $path_parts=pathinfo($path);
+   echo'当前网页的路径: '.$path.'<br>';
+   echo'分割出来的路径名称:'.$path_paths['dirname'].'<br>';
+   echo'分割出来的文件名:'.$path_paths['basename'].'<br>';
+   echo'分割出来的拓展名:'.$path_paths['extention'].'<br>';
+
+3. 获取绝对路径：realpath()
+   realpath(string path):path为获取绝对路径的文件，若指定的文件存在，就返回文件的绝对路径，否则返回FALSE;

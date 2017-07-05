@@ -1,0 +1,80 @@
+1.  创建文件夹：mkdir(string pathname[,int mode[,bool recursive]]);
+    参数pathname:用来指定要建立的文件夹的路径
+    参数mode:用来指定要创建的文件夹的权限模式，Windows操作系统会忽略此参数，权限模式必须以数字来表示，而且前面多加一个0，默认值为0777，表示最大权限，若不想设置此参数，可以设置为NULL
+    参数recursive:用来指定当文件夹路径中的一个或多个文件夹不存在时，是否一起加以建立，默认值是FALSE，表示不会一并建立不存在的文件夹
+    例： mkdir("C:\\myPHP\\picture",NULL,TRUE);
+  
+
+2.  获取当前工作的文件夹：getcwd()
+    它没有参数，返回值为字符串，若没有变更过当前的工作文件夹，则返回值为当前网页所在的文件夹；
+
+3   切换当前工作的文件夹：chdir(string directory);
+    php当前的工作文件夹预设为当前网页所在的文件夹，参数directory用来指定要切换到的文件夹，若成功切换文件夹，就返回TRUE;
+    例： chdir("C:\");
+         mkdir("picture");
+
+4.  删除文件夹：rmdir(string dirname)
+    参数dirname为要删除的文件夹路径，若成功删除文件夹就返回TRUE;
+    注意：rmdir（）函数只能删除空的文件夹，若要删除的文件夹包含文件或文件夹，请先删除这些文件或文件夹，否则会失败（返回FALSE);
+    例：rmdir（"C:\\myPHP\\picture"); 这是在C:\myPHP下删除一个名称为picture的文件夹，picture这个文件夹内没有东西才能成功。
+
+
+5.  判断路径是否为文件夹：is_dir(string filename)
+    若指定的路径存在且为文件夹，就返回TRUE;
+
+  
+6.  判断文件夹是否存在：file_exists(string filename)
+    filename为是否存在的文件夹路径，若存在就返回TRUE ;
+    例：下面的代码会先判断文件夹是否存在，不存在的话才会创建文件夹
+      $folder_name="C:\\myPHP\\picture";
+      if(!file_exists($folder_name))
+            mkdir($folder_name,NULL,TRUE);
+      else
+            echo "指定的文件夹已经存在";
+
+
+7.  变更文件夹的权限：chmod(string filename,int mode)
+     file用来指定所要变更权限的文件夹的名称或者路径，参数mode用来指定权限模式，必须以数字来表示，而且前面要多加一个0，Windows会自动忽略此参数。
+
+
+8.  获取文件夹的父文件夹的名称：dirname(string path)
+    path为要获取父文件夹名称的文件夹
+    例如:dirname("C:\\Windows\\system32\\dirvers")会返回"C:\Windows\system32";
+
+
+9.  获取文件夹所包含的文件名及子文件夹名称:scandir(string directory[,int sorting_order])
+    参数directory为要获取内容的文件夹，返回值为字符串数组，而且字符串数组存放文件名及子文件夹名称的排序方式取决于参数sorting_order的设置。预设为升序，若要变更为递减排序，可以将参数sorting_order的值设为1；
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
