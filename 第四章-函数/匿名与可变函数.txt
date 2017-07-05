@@ -1,0 +1,27 @@
+1. 匿名函数：在没有指定函数名称的情况下创建函数
+   <?php
+     $greet=function($name)
+        {
+             printf("Hello %s\r\n",&name):
+        };
+
+      $greet("World");
+      $greet("PHP");
+   ?>
+
+2.  可变函数：指的是我们可以动态的设置函数的名称
+     <?php
+       function circleArea($R)
+          {
+            echo "半径为$R的圆面积为".($R*$R*3.1416)."<br>";   
+          }
+       function squareArea($L)
+          {
+            echo "半径为$L的圆面积为".($L*$L)."<br>";   
+          }
+       $func='circleArea';
+       $func(10);         //使用了可变函数，调用函数circleArea();
+       $func='squareArea';
+       $func(10);         //使用了可变函数，调用函数squareArea();
+         
+     ?>
