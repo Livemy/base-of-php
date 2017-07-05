@@ -1,0 +1,20 @@
+1. 单引号字符串：字符串的前后加上单引号（‘’）；
+
+2. 双引号字符串：字符串的前后必须加上双引号（“”）；
+   其比单引号字符串支持更多的换码字符，而且会进行变量解析；
+
+3. heredoc语法：针对双引号字符串
+   一开始是<<<运算符，接着是一个标识符STR1和换行，然后是字符串，最后是以同一个标识符STR1结尾。
+   echo<<<STR1
+   My name is jean.<br>
+   Happy birthday to You!
+   STR1;
+
+4. nowdoc语法：针对单引号字符串，即heredoc语法会进行变量解析，而nowdoc语法不会
+   <?php
+    $name="jean";
+    echo<<<'STR1';
+  My name is $name;
+  STR1;
+   ?>
+   由于采用了nowdoc语法，故不会以变量name的值取代变量name。若要进行变量解析，必须改用heredoc语法，即去掉标识符'STR1'前后的单引号。
