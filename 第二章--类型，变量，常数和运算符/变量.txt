@@ -1,0 +1,27 @@
+1.  以$开头，其和常量名称有大小写之分，保留字无大小写之分。
+    第一个字符是英文字母或下划线，
+
+2.  避免在内部范围和外部范围使用相同的名称，以免存取错误。
+
+3.  预定义的变量：
+    服务器变量：$_SERVER
+    环境变量：$_ENV
+    HTTP COOKIE：$_COOKIE
+    HTTP GET变量：$_GET
+    HTTP POST变量：$_POST
+    HTTP文件上传数量：$_FILE
+    Request变量：$_REQUEST
+    Session变量：$_SESSION
+    Global变量：$GLOBALS
+    前一个错误信息：$php_errormsg
+
+
+
+        变量的访问方式
+
+1. 可变变量：可变变量指的是我们可以动态设置变量的名称。
+   例：这是一个名称为var，值为”Happy“ 的变量：$var="Happy"
+   接下来，我们使用可变变量，这是一个以var的值为名称的变量，也就是名称为Happy，值为"Birthday"的变量：$$var="Birthday";
+   echo $var;     //显示变量var的值，即”Happy“
+   echo $$var;    //显示变量Happy的值，即”Birthday"
+   echo $Happy;   //显示变量Happy的值，即“Birthday”

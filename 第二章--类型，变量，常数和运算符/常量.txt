@@ -1,0 +1,15 @@
+   用户自定义常数
+1. define(name,value[,case_insensitive])
+   name;第一个参数为string类型，代表常数的名称，默认有大小写之分，一般全用大写来表示
+   value:代表标量类型，代表常数的值
+   case_insensitive:为布尔类型，若省略不写，表示常数的名称有大小写之分，如果要设置成没有大小写之分，可以复制为TRUE;
+
+   预定义的常数  
+ _LINE_   文件的行数
+ _FILE_   文件名与完整的路径
+ _DIR_    文件所在的目录
+ _FUNCTION_  函数名
+ _CLASS_     类名
+ _METHOD_    方法名
+ _NAMESPACE_   命名空间的名称
+注意：这里的是两个下划线
