@@ -1,0 +1,138 @@
+步骤：a：创建空白图像：使用imagecreate()或imagecreatecolor()函数创建，背景颜色默认为黑色
+      b：分配颜色：使用imagecolorallocate()函数分配可以使用的颜色
+      c：绘制线条，图形或文字：使用php提供的函数绘制
+      d：输出图像：将图像传送到客户端浏览器或存储在web服务器中
+      e：释放内存：释放图像占用的内存空间
+
+
+1.   创建空白图像：
+     imagecreate(int x_size,int y_size); //x_size为图像宽度，y_size为图像高度，只支持256色
+     imagecteatecolor(int x_size,int y_size);  //支持百万色
+
+2.   分配颜色：imagecolorallocate(resource image,int red,int green,int blue)
+     值必须在0~255之间，0代表缺少该颜色，255代表该颜色最多
+     imagecolorallocate($im,0,0,0):黑色    imagecolorallocate($im,255,255,255):代表白色
+
+
+
+              绘制线条，图形或文字
+
+1.   绘制椭圆形：imageellipse(resource image,int cx,int cy,int w,int h,int color)
+     其表示会以颜色color在画布image的坐标(cx,cy)处绘制宽度为w，高度为h的椭圆形，若宽度和高度相同则表示圆形
+
+2.   绘制直线：imageline(resource image,int x1,int y1,int x2,int y2，int color)
+     它表示会以颜色color在画布image上绘制从(x1,y1)到(x2,y2)的直线
+
+3.   绘制多边形：imagepolygon(resource image,array points,int num_points,int color)
+     表示以颜色color在画布image上绘制由points数组指定的各个点所构成的多边形，num_points则是用来指定多边形的端点个数的
+ 
+
+4.   绘制弧线：imagearc(resource image,int cx,int cy,int w,int h,int s,int e,int color)
+     表示以颜色color在画布image上从坐标(cx,cy)处绘制宽度为w，高度为h的圆弧，而且开始绘制的角度为s（相对于X轴），结束的角度为e（顺时针方向）。
+  
+
+5.   填充颜色：imagefill(resource image,int x,int y,int color)
+     它会在画布上从坐标(x,y)所在区域填充color所指定的颜色
+
+
+6.   填充椭圆形颜色：imagefilledellipse(resource image,int cx,int cy,int w,int h,int color)
+     会在画布image上以颜色color从坐标（cx，cy）处填充宽度为w，高度为h的椭圆形，若宽度和高度一样则填充圆形颜色
+
+
+7.   填充多边形颜色：imagefilledpolygon(resource image,array points,int num_points,int color)
+     会在画布image上以颜色color填充由points数组指定的各个点所构成的多边形，num_points则用来指定多边形的端点个数
+
+
+8.   填充矩形颜色：imagefilledrectangle(resource image,int x1,int y1,int x2,int y2,int color)
+     会在画布image上以颜色color填充坐标（x1，y1）与（x2，y2）作为左上角及右下角端点所构成的矩形
+
+
+9.   绘制字符：imagechar(resource image,int size,int x,int y,string c,int color)
+     它绘制画布image上以颜色color从坐标（x，y）处绘制字号为size的字符c，若参数c包含多个字符，那么只会绘制出第一个字符。字号为1~5的数字，数字越大，字体就越大。
+
+
+10.   绘制倒伏的字符：imagecharup(resource image,int size,int x,int y,string c,int color）
+      它会在画布image上以颜色color从坐标（x，y）处以倒伏方式绘制字号为size的字符c，若参数c包含多个字符，那么只会绘出第一个字符，字号为1~5的数字，数字越大，字体就越大。
+
+
+11.   绘制文字：imagestring(resource image,int size,int x,int y,string s,int color)
+      它会在画布image上以颜色color从坐标（x，y）处绘制字号为size的文字s，字号为1~5的数字，数字越大，字体就越大。
+
+
+12.   绘制倒伏的文字：imagestringup(resource iamge,int size,int x,int y,string s,int color)
+      它会在画布image上以颜色color从坐标（x，y）处以倒伏方式绘制字号为size的文字s，字号为1~5的数字，数字越大，字体就越大。
+
+
+13.   绘制True Type文字：imagettftext(resource image,float size,float angle,int x,int y,int color,string fontfile,string text)
+     它会在画布image上以颜色color从坐标（x，y）处绘制文字text，，字号为size（单位为点数），文字角度为angle（0表示由左向右书写的文字），字体为fontfile
+
+
+                              输出图像
+1.    GIF格式：imagegif(resource image[,string filename])
+      这个函数会将图像传送至客户端浏览器或保存在服务器中，参数filename省略不写的话，表示要将图像传送至浏览器，此时，我们必须指定输出至浏览器的MIME类型，如：
+      header("content-type:iamge/gif");  iamgegif($im):
+      若要保存在服务器中，可以写成以下形式： image($im,"image/simple.gif");
+
+
+2.    PNG格式：imagepng(resource image[,string filename])
+      这个函数会将图像传送至客户端浏览器或保存在服务器中，参数filename省略不写的话，表示要将图像传送至浏览器，此时，我们必须指定输出至浏览器的MIME类型，如：
+      header("content-type:iamge/png");  iamgegif($im):
+      若要保存在服务器中，可以写成以下形式： image($im,"image/simple.png");
+
+
+3.    JPG格式：imagejpeg(resource image[,string filename[,int quality]])
+这个函数会将图像传送至客户端浏览器或保存在服务器中，参数filename省略不写的话，表示要将图像传送至浏览器，此时，我们必须指定输出至浏览器的MIME类型;参数quality用来设置图像质量，值为0~100的数字，默认值为75，数字越大，质量就越好，文件也越大
+      例：下面的语句是将图像传送至浏览器，图像质量为90
+      header("content-type:image/jpeg");    imagejpeg($im,null,90);
+      小技巧：若是将图像直接输出值浏览器，那么其它网页可以使用<img>元素来显示图像，例如<img src="GeneratePIC.php">,这样便能在别的网页中显示动态生成的图像
+ 
+
+                          释放内存
+1.    imagedestroy(resource image)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

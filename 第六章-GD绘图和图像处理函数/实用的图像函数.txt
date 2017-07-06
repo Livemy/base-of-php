@@ -1,0 +1,18 @@
+1.   获取图像格式：exif_imagegettype(string filename)
+     该函数会通过文件的第一个位来获取图像格式（不是根据拓展名）。
+     参数filename是文件的相对地址或绝对地址（URL),返回值为int类型
+
+2.   获取图像的大小和格式：getimagesize(string filename)
+     参数filename是图形的相对地址或绝对地址，返回值为包含四个元素的数组，若指定的文件不是图像，就返回FALSE
+     第一个元素代表图像的宽度，单位为像素（pixel)
+     第二个元素代表图像的高度，单位为像素（pixel)
+     第三个元素代表图像格式，其返回值的意义与exif_imagegettype()函数相同，若只是要获取图形格式，则后一个的执行效率更高。
+     第四个元素会以width="***" height="***"的形式描述图像的宽度和高度，也就是它的返回值可以直接拿来定义<img>元素指定的图像的高度和宽度，例如<img width="***" heigth="***")
+
+
+
+3.   读取外部图像
+     imagecreatefromgif(string filename)
+     imagecreatefrompng(string filename)
+     imagecreatefromjpeg(string filename)
+     参数filename表示要 读取的图像路径及文件名，可以是相对路径或绝对路径，返回值为代表该图像的图像标识符(image identifier)
