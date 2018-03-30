@@ -1,0 +1,56 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background-image: url(../img/a.png);
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+	/*position: absolute;*/
+}
+/*外层容器*/
+.wrap{
+	width: 500px;
+	margin: 0 auto;
+	margin-top: 150px;
+	margin-bottom: 180px;
+	border: 1px solid #ffffff;
+	border-radius: 20px;
+	text-align: center;
+}
+h3{
+	font-family: "微软雅黑";
+	font-size: 22px;
+	color: darkslategrey;
+	letter-spacing: 2px;
+	margin: 40px 0px;
+}
+.span{
+	margin-right: 30px;
+	font-family: "微软雅黑";
+	font-size: 15px;
+}
+input{
+	text-align: center;
+	width: 210px;
+	height: 30px;
+	border: 0px;
+	border-radius: 30px;
+	/*background: aquamarine;*/
+	opacity: 0.6;
+}
+.sub{
+	width: 80px;
+	margin: 20px 30px;
+}
+
+
+
+
+
+
+
+
+

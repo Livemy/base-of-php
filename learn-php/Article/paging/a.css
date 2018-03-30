@@ -1,0 +1,45 @@
+div.page{
+	text-align: center;
+}
+div.page a{
+	border: #aa0027 solid 1px;
+	text-decoration: none;
+	padding: 2px 5px 2px 5px;
+	margin: 2px;
+}
+div.page span.current{
+	border: 1px solid #000099;
+	background-color: #992b6c;
+	padding: 4px 6px;
+	font-weight: bold;
+}
+div.page form{
+	display: inline;
+}
+div.content{
+	height: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

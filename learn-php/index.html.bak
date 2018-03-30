@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>主界面</title>
+		<style>
+			h3,p{ margin:20px auto;text-align:center;}
+		</style>
+	</head>
+	<body>
+		<h3>这是我自己设置的开始界面</h3>
+		<p>有点丑，以后慢慢自己设置吧</p>
+		<p><a href="index.php"></a></p>
+	</body>
+</html>

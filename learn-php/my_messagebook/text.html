@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.cont{
+				display: none;
+			}
+			.current{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="link">
+			<ul>
+				<li><a>first</a></li>
+				<li><a>second</a></li>
+				<li><a>third</a></li>
+				<li><a>four</a></li>
+				<li><a>five</a></li>
+			</ul>
+		</div>
+		<div id="con">
+			<!--<div class="cont" style="display: block;"><p>第一</p></div>
+			<div class="cont" style="display: none;"><p>第二</p></div>
+			<div class="cont" style="display: none;"><p>第三</p></div>
+			<div class="cont" style="display: none;"><p>第四</p></div>
+			<div class="cont" style="display: none;"><p>第五</p></div>-->
+			<div class="cont current"><p>第一</p></div>
+			<div class="cont"><p>第二</p></div>
+			<div class="cont"><p>第三</p></div>
+			<div class="cont"><p>第四</p></div>
+			<div class="cont"><p>第五</p></div>
+		</div>
+	</body>
+	<script>
+		
+		function $(id){
+	return typeof id==='string'?document.getElementById(id):id;
+}
+
+		var link=$('link').getElementsByTagName('li');
+		var con=$('con').getElementsByTagName('div');
+		alert("aaa");
+		alert(link.length);
+		alert(con.length);
+		for(var i=0;i<link.length;i++){
+			link[i].id=i;
+			link[i].onclick=function(){
+//				alert(this.id);
+				for(var j=0;j<con.length;j++){
+//					con[j].style.display="none";
+					con[j].classList.remove("current");
+				}
+//				con[this.id].style.display="block";
+				con[this.id].classList.add("current");
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,75 @@
+.write{
+	text-align: center;
+}
+.write>form>h3.h3{
+	padding-top: 35px;
+	font-family: "微软雅黑";
+	font-size: 24px;
+	color: darkgoldenrod;
+}
+span{
+	margin-left: 30px;
+}
+input,textarea{
+	/*margin-bottom: 10px;*/
+	opacity: 0.6;
+	border: 0px;
+}
+.sub-item{
+	margin: 35px 20px;
+	width: 80px;
+	height: 30px;
+	border-radius: 20px;
+}
+p.p{
+	height: 80px;
+	line-height: 80px;
+}
+
+textarea.text{
+	min-height: 50px;
+	min-width: 100px;
+	margin-bottom: -17px;
+	border-radius: 10px;
+}
+input.titlea{
+	width: 158px;
+	height: 30px;
+	border-radius: 10px;
+}
+
+
+.content-item{
+	display: none;
+}
+
+.current{
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>php登陆与注册</title>
+		<link rel="stylesheet" href="css/css.css" />
+		<script type="text/javascript" src="js/reg.js"></script>
+	</head>
+	<body>
+		<div id="div">
+			<h3>欢迎登陆后台管理系统</h3>
+			<div id="cnt">
+				<form id="form1" name="form1" method="post" action="main.php">
+					用户名:&nbsp;<input type="text" name="username" placeholder="请输入用户名" />
+					<br /><br />
+					密&nbsp;&nbsp;&nbsp;码:&nbsp;<input type="password" name="password" placeholder="请输入密码" />
+					<br /><br />
+					<input type="submit" class="sub" value="登陆" />
+					<button><a href="reg.html">注册</a></button>
+					<!--<input type="button" class="sub" id="sub" value="注册" />-->
+				</form>
+			</div>
+		</div>
+		<!--<script>
+			var id=document.getElementById("sub");
+			id.onclick=function(){
+				alert("即将进入注册页面");
+				location.href="reg.php";
+			}
+		</script>-->
+	</body>
+</html>

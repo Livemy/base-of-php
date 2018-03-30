@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>欢迎来到私密聊天群</title>
+		<link rel="stylesheet" href="css/css.css" />
+	</head>
+	<body>
+		<div class="wrap" id="wrap">
+			<h3>私密聊天群登陆页面</h3>
+			<div class="cnt">
+				<form id="from1" name="form1" method="post" action="login_and_reg/login.php">
+					<span class="span">用户名&nbsp;:</span><input type="text" name="username" placeholder="请输入登陆用户名" />
+					<br /><br /><br />
+					<span class="span">密&nbsp;&nbsp;&nbsp;码&nbsp;:</span><input type="password" name="password" placeholder="请输入登陆用户密码"/>
+					<br /><br />
+					<input type="submit" class="sub" value="登陆" />
+					<input type="button" class="sub" id="sub" value="注册" onclick="reg();" />
+				</form>
+			</div>
+		</div>
+		<script>
+			function reg(){
+				alert("aaa");
+				location.href="login_and_reg/reg.html";
+			}
+		</script>
+	</body>
+</html>

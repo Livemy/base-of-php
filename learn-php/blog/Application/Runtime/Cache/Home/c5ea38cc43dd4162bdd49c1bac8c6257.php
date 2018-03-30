@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?>这是前台首页控制器里的内容，整个博客的默认首页好像就在这里

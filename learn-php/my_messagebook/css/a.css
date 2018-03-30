@@ -1,0 +1,51 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+ul li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	background: burlywood;
+}
+
+.wrap{
+	width: 800px;
+	margin: 0 auto;
+	background: darkorange;
+}
+
+/*头部*/
+.header{
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+	margin-top: 30px;
+}
+.header ul{
+	height: 30px;
+}
+.header ul li{
+	float: left;
+	margin: 0 20px;
+	line-height: 30px;
+}
+.header ul li a{
+	display: block;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	font-weight: bold;
+	color: darkturquoise;
+	/*color: blue;*/
+}
+
+.content{
+	min-height: 500px;
+	background: #00CED1;
+}
+
+
+
