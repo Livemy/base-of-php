@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajax6-请求PHP数据</title>
+</head>
+<body>
+
+	<button id="button2">请求所有json用户</button>
+	<br><br>
+
+	<h1>所有json用户</h2>
+	<div id="users"></div>
+	
+	<script type="text/javascript">
+		
+		document.getElementById('button2').addEventListener("click",loadUsers);
+
+		function loadUsers(){
+			var xhr=new XMLHttpRequest();
+			xhr.open("get","users.php",true);
+			xhr.onload=function(){
+				if(this.status==200){
+					// console.log(this.responseText);
+					//我们返回的其实是一个json数据，要想使用的话还需要将其解析成一个js对象
+					var users=JSON.parse(this.responseText);
+					// var users=this.responseText;
+					console.log(users.username);
+					console.log(users);
+					var output="";
+					//遍历数组
+					for (var i in users) {
+						output+=`
+							<ul>
+								<li>${users[i].id}</li>
+								<li>${users[i].username}</li>
+							</ul>
+						`;
+					}
+					document.getElementById('users').innerHTML=output;
+				}
+			}
+			xhr.send();
+		}
+	</script>
+</body>
+</html>
